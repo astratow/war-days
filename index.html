@@ -7,7 +7,7 @@
 </head>
 <body>
 	<h1>Dzisiaj jest <span id="licznik">0</span> dzień wojny na Ukrainie.</h1>
-		<script>
+	<script>
 		// Get the current date
 		let currentDate = new Date();
 
@@ -17,6 +17,16 @@
 		// Calculate the difference in days
 		let timeDiff = Math.abs(currentDate.getTime() - targetDate.getTime());
 		let daysDiff = Math.ceil(timeDiff / (1000 * 3600 * 24));
+
+		// Consider leap years
+		let leapYears = 0;
+		for (let year = targetDate.getFullYear(); year <= currentDate.getFullYear(); year++) {
+			if ((year % 4 === 0 && year % 100 !== 0) || year % 400 === 0) {
+				leapYears++;
+			}
+		}
+
+		daysDiff -= leapYears;
 
 		// Update the span element with the calculated value
 		document.getElementById("licznik").textContent = daysDiff;
