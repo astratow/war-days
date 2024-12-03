@@ -12,31 +12,31 @@
 			border: 2px solid black;
 			padding: 5px 10px;
 			line-height: 100%;
+			font-size: 1.5em;
+			box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+		}
+		body {
+			font-family: Arial, sans-serif;
+			text-align: center;
+			margin: 20px;
+		}
+		h1 {
+			color: #333;
 		}
 	</style>
 </head>
 <body>
-	<h1>Dzisiaj jest <span id="licznik">0</span> dzień operacji Z.</h1>
+	<h1>Today is day <span id="licznik">0</span> of operation Z.</h1>
 	<script>
 		// Get the current date
-		let currentDate = new Date();
+		const currentDate = new Date();
 
 		// Set the target date (February 24, 2022)
-		let targetDate = new Date(2022, 1, 24);
+		const targetDate = new Date(2022, 1, 24);
 
 		// Calculate the difference in days
-		let timeDiff = Math.abs(currentDate.getTime() - targetDate.getTime());
-		let daysDiff = Math.ceil(timeDiff / (1000 * 3600 * 24));
-
-		// Consider leap years
-		let leapYears = 0;
-		for (let year = targetDate.getFullYear(); year <= currentDate.getFullYear(); year++) {
-			if ((year % 4 === 0 && year % 100 !== 0) || year % 400 === 0) {
-				leapYears++;
-			}
-		}
-
-		daysDiff -= leapYears;
+		const timeDiff = currentDate - targetDate;
+		const daysDiff = Math.floor(timeDiff / (1000 * 3600 * 24));
 
 		// Update the span element with the calculated value
 		document.getElementById("licznik").textContent = daysDiff;
