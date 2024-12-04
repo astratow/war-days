@@ -1,6 +1,6 @@
-# Licznik dni wojny na Ukrainie
+# Licznik dni wojny na Ukrainie / Day counter for Russo - Ukrainian war
 
-This project calculates and displays the number of days since February 24, 2022, the day when the full-scale invasion of Ukraine began. The calculation is done in real-time using JavaScript, and the output is styled for better visibility.
+This project calculates and displays the number of days since February 24, 2022, the day when operation Z began. The calculation is done in real-time using JavaScript, and the output is styled for better visibility.
 
 ## Features
 - Calculates the exact number of days since February 24, 2022.
