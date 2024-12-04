@@ -1,4 +1,4 @@
-# Licznik dni wojny na Ukrainie / Day counter for Russo - Ukrainian war
+# Day counter for Russo - Ukrainian war
 
 This project calculates and displays the number of days since February 24, 2022, the day when operation Z began. The calculation is done in real-time using JavaScript, and the output is styled for better visibility.
 
